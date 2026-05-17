@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
     display: "flex",
     alignItems: "flex-start",
     borderRadius: 20,
-    width: width * 0.86,
+    width: "80%",
     paddingBottom: 20,
     boxShadow: "2px 2px 10px #C5C5C5",
     marginBottom: 20,
@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
     color: "#6D6D6D",
   },
   image: {
-    width: width * 0.86,
+    width: "100%",
     borderTopLeftRadius: 20,
     borderTopRightRadius: 20,
   },
