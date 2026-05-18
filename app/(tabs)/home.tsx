@@ -31,14 +31,7 @@ const home = () => {
         />
         <View style={styles.circle}></View>
 
-        <View
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-            flexDirection: "row",
-          }}
-        >
+        <View style={styles.titleandPoints}>
           <View>
             <Image source={images.sejr} resizeMode="contain" />
           </View>
@@ -61,13 +54,13 @@ const home = () => {
                   fontSize: 18,
                 }}
               >
-                J
+                E
               </Text>
             </View>
           </View>
         </View>
 
-        <View style={{ display: "flex", justifyContent: "flex-start" }}>
+        <View style={styles.welcomeMessage}>
           <Text style={styles.name}>Hello, Eman!</Text>
         </View>
 
@@ -83,7 +76,7 @@ const home = () => {
           </View>
         </TouchableOpacity>
 
-        <View>
+        <View style={styles.section}>
           <View style={styles.activitiesHeading}>
             <Text style={styles.heading}> Activities</Text>
             <Pressable onPress={() => router.push("/activitiesList")}>
@@ -107,7 +100,7 @@ const home = () => {
           />
         </View>
 
-        <View>
+        <View style={styles.section}>
           <Text style={styles.heading}>Category</Text>
           <FlatList
             horizontal={true}
@@ -134,7 +127,7 @@ const home = () => {
           />
         </View>
 
-        <View>
+        <View style={styles.section}>
           <Text style={styles.heading}>Events</Text>
           <FlatList
             horizontal={true}
@@ -175,10 +168,7 @@ const home = () => {
 const styles = StyleSheet.create({
   mainContainer: {
     backgroundColor: "#F2F2F2",
-    padding: 35,
     paddingTop: 100,
-    paddingRight: 25,
-    paddingLeft: 25,
     display: "flex",
     justifyContent: "center",
   },
@@ -190,6 +180,14 @@ const styles = StyleSheet.create({
     top: -180,
     right: -190,
     borderRadius: 300,
+  },
+  titleandPoints: {
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+    flexDirection: "row",
+    paddingRight: 25,
+    paddingLeft: 25,
   },
   pointsContainer: {
     backgroundColor: "#ffff",
@@ -213,6 +211,12 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
+  welcomeMessage: {
+    display: "flex",
+    justifyContent: "flex-start",
+    paddingLeft: 25,
+    paddingRight: 25,
+  },
   name: {
     fontFamily: "Tommy-Regular",
     fontSize: 33,
@@ -235,6 +239,10 @@ const styles = StyleSheet.create({
   seeAll: {
     color: "#048780",
     fontFamily: "Tommy-Light",
+    paddingRight: 25,
+  },
+  section: {
+    paddingLeft: 25,
   },
 });
 
