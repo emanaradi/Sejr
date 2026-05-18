@@ -1,5 +1,6 @@
-import { Stack, SplashScreen } from "expo-router";
 import { useFonts } from "expo-font";
+import { Stack } from "expo-router";
+import * as SplashScreen from "expo-splash-screen";
 import { useEffect } from "react";
 
 // prevent the splash from auto-hiding before asset loading is complete.
@@ -14,21 +15,31 @@ export default function RootLayout() {
     "Tommy-Light": require("../assets/fonts/Tommy-Light.otf"),
   });
 
+  // useEffect(() => {
+  //   if (error) throw error;
+
+  //   if (fontsLoaded) {
+  //     SplashScreen.hideAsync();
+  //   }
+  // }, [fontsLoaded, error]);
+
+  // if (!fontsLoaded) {
+  //   return null;
+  // }
+
+  // if (!fontsLoaded && !error) {
+  //   return null;
+  // }
+
   useEffect(() => {
-    if (error) throw error;
-
-    if (fontsLoaded) {
-      SplashScreen.hideAsync();
+    async function hideSplash() {
+      if (fontsLoaded) {
+        await SplashScreen.hideAsync();
+      }
     }
-  }, [fontsLoaded, error]);
 
-  if (!fontsLoaded) {
-    return null;
-  }
-
-  if (!fontsLoaded && !error) {
-    return null;
-  }
+    hideSplash();
+  }, [fontsLoaded]);
 
   return (
     <Stack>
