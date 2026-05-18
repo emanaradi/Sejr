@@ -1,3 +1,5 @@
+import FontAwesome5 from "@expo/vector-icons/FontAwesome5";
+
 import { Stack, router, useLocalSearchParams } from "expo-router";
 import React, { useState } from "react";
 import {
@@ -60,7 +62,7 @@ const event = () => {
           <TouchableOpacity
             style={styles.backIconContainer}
             onPress={() => {
-              router.push("/home");
+              router.back();
             }}
           >
             <Image source={icons.backicon} style={styles.backIcon} />
@@ -118,7 +120,7 @@ const event = () => {
               {/* End of Avatars */}
             </View>
             <TouchableOpacity>
-              <Image source={icons.share} style={styles.shareIcon} />
+              <FontAwesome5 name="share" size={24} color="#349d95" solid />
             </TouchableOpacity>
           </View>
 
@@ -225,22 +227,13 @@ const styles = StyleSheet.create({
     height: screenHeight * 0.3,
   },
   bottomSection: {
-    // backgroundColor: "white",
-    // display: "flex",
-    // borderTopLeftRadius: 40,
-    // borderTopRightRadius: 40,
-    // flex: 2,
-    // padding: 28,
-    boxShadow: "0px 0px 40px #b2b1b1",
-    // gap: 25,
-
+    boxShadow: "0px 0px 40px #0a0a0a",
     flex: 2,
     backgroundColor: "white",
     borderTopLeftRadius: 40,
     borderTopRightRadius: 40,
     padding: 28,
     gap: 25,
-
     marginTop: -40,
   },
   textFont: {
@@ -259,7 +252,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   textLocation: {
-    color: "#868686",
+    color: "#696868",
   },
   locationCalendarIcon: {
     width: screenWidth * 0.05,
@@ -331,7 +324,7 @@ const styles = StyleSheet.create({
     color: "#333333",
   },
   eventDescription: {
-    color: "#A5A3A3",
+    color: "#636262",
     fontSize: 16,
   },
   eventDescriptionContainer: {
