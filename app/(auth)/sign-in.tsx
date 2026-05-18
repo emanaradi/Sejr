@@ -1,21 +1,20 @@
 import {
-  View,
-  Text,
-  StyleSheet,
-  ScrollView,
-  Dimensions,
   Alert,
-  TouchableOpacity,
-  TextInput,
+  Dimensions,
   KeyboardAvoidingView,
   Platform,
+  ScrollView,
   StatusBar,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
 } from "react-native";
 
-import React, { useState } from "react";
-import { CustomButton, CustomInput } from "../../components";
 import { router } from "expo-router";
+import React, { useState } from "react";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
+import { CustomButton, CustomInput } from "../../components";
 
 const { width, height } = Dimensions.get("window");
 
@@ -65,7 +64,7 @@ const signIn = () => {
                 <CustomInput
                   title="Email"
                   placeholder="Enter your email"
-                  // KeyboardType="email-address"
+                  KeyboardType="email-address"
                   icon="email"
                   handleChangeText={(e: any) => {
                     setForm({ ...form, email: e });
@@ -74,7 +73,7 @@ const signIn = () => {
                 <CustomInput
                   title="password"
                   placeholder="Enter your password"
-                  // KeyboardType="password"
+                  KeyboardType="password"
                   icon="lock"
                   handleChangeText={(e: any) => {
                     setForm({ ...form, password: e });
@@ -135,7 +134,7 @@ const styles = StyleSheet.create({
     padding: 50,
     display: "flex",
     flexDirection: "column",
-    gap: 55,
+    gap: 35,
   },
   welcomeTitle: {
     fontFamily: "Tommy-Regular",
