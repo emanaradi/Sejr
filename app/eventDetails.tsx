@@ -1,17 +1,17 @@
+import { Stack, router, useLocalSearchParams } from "expo-router";
+import React, { useState } from "react";
 import {
+  Image,
+  Modal,
+  ScrollView,
   StyleSheet,
   Text,
-  View,
-  Image,
-  ScrollView,
   TouchableOpacity,
-  Modal,
+  View,
 } from "react-native";
-import React, { useState } from "react";
-import { useLocalSearchParams, Stack, router } from "expo-router";
-import { screenWidth, screenHeight } from "../lib/data";
+import { SafeAreaProvider } from "react-native-safe-area-context";
 import { icons } from "../constants";
-import { SafeAreaView } from "react-native-safe-area-context";
+import { screenHeight, screenWidth } from "../lib/data";
 
 const event = () => {
   const { id, title, describtion, date, location, image, participants } =
@@ -26,7 +26,7 @@ const event = () => {
 
   return (
     <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
-      <SafeAreaView style={{ flex: 1 }}>
+      <SafeAreaProvider style={{ flex: 1 }}>
         <Modal
           animationType="slide"
           transparent={true}
@@ -56,12 +56,7 @@ const event = () => {
         <View style={styles.topSection}>
           <Stack.Screen options={{ headerShown: false }} />
 
-          {image && (
-            <Image
-              source={{ uri: Array.isArray(image) ? image[0] : image }}
-              style={styles.eventImage}
-            />
-          )}
+          {image && <Image source={Number(image)} style={styles.eventImage} />}
           <TouchableOpacity
             style={styles.backIconContainer}
             onPress={() => {
@@ -174,7 +169,7 @@ const event = () => {
             </TouchableOpacity>
           </View>
         </View>
-      </SafeAreaView>
+      </SafeAreaProvider>
     </ScrollView>
   );
 };
@@ -183,7 +178,7 @@ export default event;
 
 const styles = StyleSheet.create({
   modalContainer: {
-    width: screenWidth * 0.6,
+    width: screenWidth * 0.7,
     height: screenWidth * 0.4,
     backgroundColor: "white",
     boxShadow: "0px 0px 40px #949292",
@@ -191,7 +186,7 @@ const styles = StyleSheet.create({
     padding: 20,
     display: "flex",
     justifyContent: "center",
-    gap: 10,
+    gap: 20,
   },
   closeButton: {
     backgroundColor: "#0f766e",
@@ -204,10 +199,11 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
+    backgroundColor: "#404040af",
   },
   eventImage: {
-    width: screenWidth,
-    height: screenHeight * 0.4,
+    width: "100%",
+    height: "100%",
   },
   backIconContainer: {
     position: "absolute",
@@ -226,22 +222,33 @@ const styles = StyleSheet.create({
   topSection: {
     flex: 1,
     position: "relative",
+    height: screenHeight * 0.3,
   },
   bottomSection: {
+    // backgroundColor: "white",
+    // display: "flex",
+    // borderTopLeftRadius: 40,
+    // borderTopRightRadius: 40,
+    // flex: 2,
+    // padding: 28,
+    boxShadow: "0px 0px 40px #b2b1b1",
+    // gap: 25,
+
+    flex: 2,
     backgroundColor: "white",
     borderTopLeftRadius: 40,
     borderTopRightRadius: 40,
-    flex: 2,
     padding: 28,
-    boxShadow: "0px 0px 40px #b2b1b1",
-    display: "flex",
     gap: 25,
+
+    marginTop: -40,
   },
   textFont: {
     fontFamily: "Tommy-Light",
   },
   eventTitle: {
-    fontWeight: "bold",
+    fontWeight: "400",
+    fontFamily: "Tommy-Bold",
     fontSize: 23,
     color: "#03013B",
   },
