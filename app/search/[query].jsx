@@ -2,15 +2,14 @@ const { useLocalSearchParams } = require("expo-router");
 const { useEffect } = require("react");
 //const { FlatList } = require("react-native-web");
 
-const search = () =>{
-    const {query} = useLocalSearchParams();
-    
-    useEffect(()=>{
-        refetch();
-    }, [query]);
+const search = () => {
+  const { query } = useLocalSearchParams();
 
-    return(
-        <SafeAreaView>
-        </SafeAreaView>
-    )
-}
+  useEffect(() => {
+    refetch();
+  }, [query]);
+
+  return <SafeAreaView></SafeAreaView>;
+};
+
+export default search;
