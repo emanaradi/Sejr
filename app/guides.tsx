@@ -1,18 +1,17 @@
+import { router } from "expo-router";
+import React, { useState } from "react";
 import {
-  View,
-  Text,
-  StyleSheet,
   Dimensions,
   Image,
-  StatusBar,
   ScrollView,
+  StatusBar,
+  StyleSheet,
+  Text,
+  View,
 } from "react-native";
-import React, { useState } from "react";
-import { images } from "../constants/index.js";
-import { CustomButton } from "../components";
-import { router } from "expo-router";
 import { SafeAreaProvider } from "react-native-safe-area-context";
-
+import { CustomButton } from "../components";
+import { images } from "../constants/index.js";
 const { width, height } = Dimensions.get("window");
 
 const guides = () => {
@@ -141,12 +140,13 @@ const guides = () => {
 const styles = StyleSheet.create({
   container: {
     backgroundColor: "#ffff",
-    //height: height,
     width: width,
     display: "flex",
     padding: height * 0.04,
     alignItems: "center",
-    gap: 60,
+    gap: 30,
+    height: "100%",
+    paddingTop: 60,
   },
   sejrContainer: {
     display: "flex",
@@ -155,8 +155,6 @@ const styles = StyleSheet.create({
     display: "flex",
     flexDirection: "row",
     gap: 5,
-    //position: "absolute",
-    //top: 540,
   },
   item: {
     backgroundColor: "#D9D9D9",
@@ -182,13 +180,12 @@ const styles = StyleSheet.create({
     alignItems: "center",
     padding: 10,
     width: width * 0.85,
-    //position: "absolute",
-    //top: 580,
   },
   title: {
     fontSize: 23,
     fontWeight: 500,
     fontFamily: "Tommy-Regular",
+    textAlign: "center",
   },
   subtitle: {
     textAlign: "center",
@@ -200,8 +197,6 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     gap: 14,
     width: "100%",
-    //position: "absolute",
-    //bottom: 55,
   },
 });
 
