@@ -37,13 +37,13 @@ Sejr Offers is a mobile application that provides users with discounts, vouchers
 Clone the repository:
 
 ```bash
-git clone https://github.com/yourusername/sejr-offers-app.git
+git clone https://github.com/emanaradi/Sejr.git
 ```
 
 Navigate to the project folder:
 
 ```bash
-cd sejr
+cd Sejr
 ```
 
 Install dependencies:
