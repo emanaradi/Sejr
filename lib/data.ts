@@ -1,5 +1,5 @@
+import { Dimensions, ImageSourcePropType } from "react-native";
 import { images } from "../constants";
-import { Dimensions } from "react-native";
 
 export const { width, height } = Dimensions.get("window");
 
@@ -34,7 +34,7 @@ export interface Activity {
 export interface Offer {
   id: number;
   store: string;
-  image: string;
+  image: ImageSourcePropType;
   offer?: string;
 }
 
