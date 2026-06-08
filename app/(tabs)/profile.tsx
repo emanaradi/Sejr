@@ -2,12 +2,12 @@ import { router } from "expo-router";
 import React, { useState } from "react";
 import {
   ImageBackground,
-  SafeAreaView,
   StyleSheet,
   Text,
   TouchableOpacity,
   View,
 } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 import DetailsItem from "../../components/DetailsItem";
 import EditButton from "../../components/EditButton";
 import { icons, images } from "../../constants";
